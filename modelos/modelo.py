@@ -4,17 +4,20 @@ def conectar():
     return sqlite3.connect("banco.db")
 
 
-def inserir_produtos(nome, preco, quantidade):
+def inserir_produtos(produto, preco, quantidade):
     with conectar() as conexao:
         cursor = conexao.cursor()
-        cursor.execute("INSERT INTO produtos (nome, preco, quantidade) VALUES (?, ?, ?)", (nome, preco, quantidade))
+        cursor.execute("INSERT INTO produtos (produto, preco, quantidade) VALUES (?, ?, ?)", (produto, preco, quantidade))
         conexao.commit()
 
 def buscar_produtos():
-    with conectar() as conexao:
-        cursor = conexao.cursor()
-        cursor.execute("SELECT * FROM produtos")
-        return cursor.fetchall()
+    try:
+        with conectar() as conexao:
+            cursor = conexao.cursor()
+            cursor.execute("SELECT * FROM produtos")
+            return cursor.fetchall()
+    except sqlite3.Error:
+        return []
 
 def atualizar_preco(id_produto, novo_preco):
     with conectar() as conexao:
@@ -27,3 +30,4 @@ def deletar_produto(id_produto):
         cursor = conexao.cursor()
         cursor.execute("DELETE FROM produtos WHERE id = ?", (id_produto,))
         conexao.commit()
+

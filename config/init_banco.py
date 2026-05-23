@@ -13,7 +13,7 @@ def criar_tabela():
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS produtos (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    nome TEXT NOT NULL,
+                    produto TEXT NOT NULL,
                     preco REAL NOT NULL,
                     quantidade INTEGER NOT NULL
                 )
