@@ -25,9 +25,5 @@ def atualizar_preco(id_produto, novo_preco):
         cursor.execute("UPDATE produtos SET preco = ? WHERE id = ?", (novo_preco, id_produto))
         conexao.commit()
 
-def deletar_produto(id_produto):
-    with conectar() as conexao:
-        cursor = conexao.cursor()
-        cursor.execute("DELETE FROM produtos WHERE id = ?", (id_produto,))
-        conexao.commit()
+
 

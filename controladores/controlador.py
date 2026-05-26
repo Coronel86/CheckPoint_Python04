@@ -1,4 +1,4 @@
-from modelos.modelo import inserir_produtos
+from modelos.modelo import inserir_produtos, buscar_produtos
 
 def processar_cadastro(produto, preco, quantidade):
     if produto == "" or preco == "":
@@ -11,3 +11,6 @@ def processar_cadastro(produto, preco, quantidade):
 
     inserir_produtos(produto, preco, quantidade)
     return True, "Cadastro realizado com sucesso!"
+
+def obter_lista_produtos():
+    return buscar_produtos()
