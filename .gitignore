@@ -4,7 +4,7 @@ venv/
 
 # Pastas geradas pelo PyInstaller
 build/
-dist/
+#dist/
 *.spec
 
 # Arquivos de cache do Python
