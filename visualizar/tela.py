@@ -26,7 +26,7 @@ def botao_gravar_produto():
         messagebox.showerror("Erro de Validação", mensagem)
 
 def atualizar_listagem():
-    """Fase 3: Criar uma listagem atualizável"""
+    #### listagem atualizável
     txt_listagem.configure(state="normal") # Libera para escrita
     txt_listagem.delete("1.0", "end") # Limpa o texto antigo
     
@@ -42,7 +42,7 @@ def atualizar_listagem():
     txt_listagem.configure(state="disabled") # Bloqueia para o usuário não editar
 
 def gerar_dashboard():
-    """Fase 4: O Dashboard com Matplotlib"""
+    ### O Dashboard com Matplotlib
     global canvas_grafico
     
     produtos = obter_lista_produtos()
@@ -83,7 +83,7 @@ def iniciar_janela_principal():
     ctk.set_appearance_mode("dark")
     janela = ctk.CTk()
     janela.title("Sistema - Gestão de Inventário")
-    janela.geometry("900x550")
+    janela.geometry("1500x750")
 
     
     frame_esquerda = ctk.CTkFrame(janela, width=400)

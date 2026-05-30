@@ -19,11 +19,6 @@ def buscar_produtos():
     except sqlite3.Error:
         return []
 
-def atualizar_preco(id_produto, novo_preco):
-    with conectar() as conexao:
-        cursor = conexao.cursor()
-        cursor.execute("UPDATE produtos SET preco = ? WHERE id = ?", (novo_preco, id_produto))
-        conexao.commit()
 
 
 
