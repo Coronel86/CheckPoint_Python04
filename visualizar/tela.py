@@ -36,7 +36,7 @@ def atualizar_listagem():
     txt_listagem.insert("end", "-"*50 + "\n")
     
     for p in produtos:
-        # p[0]=id, p[1]=produto, p[2]=preco, p[3]=quantidade
+        # p[0]=id, p[1]=produto, p[2]=preco, p[3]=quantidade. É aqui que o Python usa essas posições de verdade para montar o texto:
         txt_listagem.insert("end", f"{p[0]:<5} | {p[1]:<20} | R$ {p[2]:<8.2f} | {p[3]:<5}\n")
         
     txt_listagem.configure(state="disabled") # Bloqueia para o usuário não editar
